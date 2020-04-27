@@ -1,7 +1,7 @@
 /*
  * This file is part of Amtk - Actions, Menus and Toolbars Kit
  *
- * Copyright 2017, 2018 - Sébastien Wilmet <swilmet@gnome.org>
+ * Copyright 2017, 2018, 2020 - Sébastien Wilmet <swilmet@gnome.org>
  *
  * Amtk is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the
@@ -464,7 +464,7 @@ common_create_widget (AmtkFactory       *factory,
 
 	if ((flags & AMTK_FACTORY_IGNORE_GACTION) == 0)
 	{
-		gtk_actionable_set_action_name (GTK_ACTIONABLE (*widget), action_name);
+		gtk_actionable_set_detailed_action_name (GTK_ACTIONABLE (*widget), action_name);
 	}
 
 	return action_info;

@@ -1,7 +1,7 @@
 /*
  * This file is part of Amtk - Actions, Menus and Toolbars Kit
  *
- * Copyright 2017, 2018 - Sébastien Wilmet <swilmet@gnome.org>
+ * Copyright 2017, 2018, 2020 - Sébastien Wilmet <swilmet@gnome.org>
  *
  * Amtk is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the
@@ -58,7 +58,7 @@ struct _AmtkFactoryClass
  * @AMTK_FACTORY_FLAGS_NONE: No flags.
  * @AMTK_FACTORY_IGNORE_GACTION: Do not associate the created object with the
  *   #GAction. For example if the object to create is a #GtkActionable, do not
- *   call gtk_actionable_set_action_name().
+ *   call gtk_actionable_set_detailed_action_name().
  * @AMTK_FACTORY_IGNORE_ICON: Do not set an icon.
  * @AMTK_FACTORY_IGNORE_LABEL: Do not set a label/short description.
  * @AMTK_FACTORY_IGNORE_TOOLTIP: Do not set a tooltip/long description.

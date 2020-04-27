@@ -1,7 +1,7 @@
 /*
  * This file is part of Amtk - Actions, Menus and Toolbars Kit
  *
- * Copyright 2017 - Sébastien Wilmet <swilmet@gnome.org>
+ * Copyright 2017, 2020 - Sébastien Wilmet <swilmet@gnome.org>
  *
  * Amtk is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the
@@ -33,11 +33,12 @@ G_BEGIN_DECLS
 
 /**
  * AmtkActionInfoEntry:
- * @action_name: the action name.
+ * @action_name: the action name. Can be a detailed action name, see
+ *   g_action_parse_detailed_name().
  * @icon_name: the icon name, or %NULL.
  * @label: the label (i.e. a short description) with a mnemonic, or %NULL.
  * @accel: the accelerator, in the format understood by gtk_accelerator_parse().
- * Or %NULL.
+ *   Or %NULL.
  * @tooltip: the tooltip (i.e. a long description), or %NULL.
  *
  * This struct defines a set of information for a single action. It is for use

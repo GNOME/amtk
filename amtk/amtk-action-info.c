@@ -1,7 +1,7 @@
 /*
  * This file is part of Amtk - Actions, Menus and Toolbars Kit
  *
- * Copyright 2017, 2018 - Sébastien Wilmet <swilmet@gnome.org>
+ * Copyright 2017, 2018, 2020 - Sébastien Wilmet <swilmet@gnome.org>
  *
  * Amtk is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the
@@ -211,7 +211,8 @@ amtk_action_info_copy (const AmtkActionInfo *info)
  * amtk_action_info_get_action_name:
  * @info: an #AmtkActionInfo.
  *
- * Returns: (nullable): the action name, or %NULL. Example: `"win.save"`.
+ * Returns: (nullable): the action name, or %NULL. Example: `"win.save"`. Can be
+ * a detailed action name, see g_action_parse_detailed_name().
  * Since: 2.0
  */
 const gchar *
@@ -227,7 +228,8 @@ amtk_action_info_get_action_name (const AmtkActionInfo *info)
  * @info: an #AmtkActionInfo.
  * @action_name: the action name.
  *
- * Sets the action name, for example `"win.save"`.
+ * Sets the action name, for example `"win.save"`. Can be a detailed action
+ * name, see g_action_parse_detailed_name().
  *
  * Since: 2.0
  */

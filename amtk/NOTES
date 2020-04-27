@@ -1,21 +1,8 @@
 Amtk notes
 ==========
 
-TODO list
----------
-
-- Support detailed GAction names in factory functions:
-	- In AmtkActionInfo, document that the "action name" can be a detailed
-	  action name, with a reference to g_action_parse_detailed_name().
-	- In AmtkFactory, call gtk_actionable_set_detailed_action_name() and
-	  adapt docs.
-	- Adapt docs and code in other classes if needed (but I think it's only
-	  in AmtkActionInfo and AmtkFactory).
-
-- Implement more factory functions.
-
-Other possible things to do
----------------------------
+Possible things to do
+---------------------
 
 - When calling amtk_menu_item_set_icon_name(), do not have a large margin on
   the left. GtkUIManager was able to put the icon without the large margin (in
