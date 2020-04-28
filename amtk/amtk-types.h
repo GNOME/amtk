@@ -36,6 +36,10 @@ typedef struct _AmtkApplicationWindow		AmtkApplicationWindow;
 typedef struct _AmtkFactory			AmtkFactory;
 typedef struct _AmtkMenuShell			AmtkMenuShell;
 
+#ifndef _AMTK_EXTERN
+#define _AMTK_EXTERN extern
+#endif
+
 G_END_DECLS
 
 #endif /* AMTK_TYPES_H */
