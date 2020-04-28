@@ -53,26 +53,35 @@ struct _AmtkApplicationWindowClass
 	gpointer padding[12];
 };
 
+_AMTK_EXTERN
 GType			amtk_application_window_get_type			(void) G_GNUC_CONST;
 
+_AMTK_EXTERN
 AmtkApplicationWindow *	amtk_application_window_get_from_gtk_application_window	(GtkApplicationWindow *gtk_window);
 
+_AMTK_EXTERN
 GtkApplicationWindow *	amtk_application_window_get_application_window		(AmtkApplicationWindow *amtk_window);
 
+_AMTK_EXTERN
 GtkStatusbar *		amtk_application_window_get_statusbar			(AmtkApplicationWindow *amtk_window);
 
+_AMTK_EXTERN
 void			amtk_application_window_set_statusbar			(AmtkApplicationWindow *amtk_window,
 										 GtkStatusbar          *statusbar);
 
+_AMTK_EXTERN
 void			amtk_application_window_connect_menu_to_statusbar	(AmtkApplicationWindow *amtk_window,
 										 GtkMenuShell          *menu_shell);
 
+_AMTK_EXTERN
 void			amtk_application_window_connect_recent_chooser_menu_to_statusbar
 										(AmtkApplicationWindow *amtk_window,
 										 GtkRecentChooserMenu  *menu);
 
+_AMTK_EXTERN
 GtkWidget *		amtk_application_window_create_open_recent_menu		(AmtkApplicationWindow *amtk_window);
 
+_AMTK_EXTERN
 GtkWidget *		amtk_application_window_create_open_recent_menu_item	(AmtkApplicationWindow *amtk_window);
 
 G_END_DECLS

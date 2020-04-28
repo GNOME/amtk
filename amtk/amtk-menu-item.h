@@ -25,14 +25,18 @@
 #endif
 
 #include <gtk/gtk.h>
+#include <amtk/amtk-types.h>
 
 G_BEGIN_DECLS
 
+_AMTK_EXTERN
 const gchar *	amtk_menu_item_get_long_description	(GtkMenuItem *menu_item);
 
+_AMTK_EXTERN
 void		amtk_menu_item_set_long_description	(GtkMenuItem *menu_item,
 							 const gchar *long_description);
 
+_AMTK_EXTERN
 void		amtk_menu_item_set_icon_name		(GtkMenuItem *item,
 							 const gchar *icon_name);
 

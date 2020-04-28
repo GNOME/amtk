@@ -62,46 +62,64 @@ struct _AmtkActionInfoEntry
 	gpointer padding[3];
 };
 
+_AMTK_EXTERN
 GType			amtk_action_info_get_type		(void) G_GNUC_CONST;
 
+_AMTK_EXTERN
 AmtkActionInfo *	amtk_action_info_new			(void);
 
+_AMTK_EXTERN
 AmtkActionInfo *	amtk_action_info_new_from_entry		(const AmtkActionInfoEntry *info_entry,
 								 const gchar               *translation_domain);
 
+_AMTK_EXTERN
 AmtkActionInfo *	amtk_action_info_ref			(AmtkActionInfo *info);
 
+_AMTK_EXTERN
 void			amtk_action_info_unref			(AmtkActionInfo *info);
 
+_AMTK_EXTERN
 AmtkActionInfo *	amtk_action_info_copy			(const AmtkActionInfo *info);
 
+_AMTK_EXTERN
 const gchar *		amtk_action_info_get_action_name	(const AmtkActionInfo *info);
 
+_AMTK_EXTERN
 void			amtk_action_info_set_action_name	(AmtkActionInfo *info,
 								 const gchar    *action_name);
 
+_AMTK_EXTERN
 const gchar *		amtk_action_info_get_icon_name		(const AmtkActionInfo *info);
 
+_AMTK_EXTERN
 void			amtk_action_info_set_icon_name		(AmtkActionInfo *info,
 								 const gchar    *icon_name);
 
+_AMTK_EXTERN
 const gchar *		amtk_action_info_get_label		(const AmtkActionInfo *info);
 
+_AMTK_EXTERN
 void			amtk_action_info_set_label		(AmtkActionInfo *info,
 								 const gchar    *label);
 
+_AMTK_EXTERN
 const gchar *		amtk_action_info_get_tooltip		(const AmtkActionInfo *info);
 
+_AMTK_EXTERN
 void			amtk_action_info_set_tooltip		(AmtkActionInfo *info,
 								 const gchar    *tooltip);
 
+_AMTK_EXTERN
 const gchar * const *	amtk_action_info_get_accels		(const AmtkActionInfo *info);
 
+_AMTK_EXTERN
 void			amtk_action_info_set_accels		(AmtkActionInfo      *info,
 								 const gchar * const *accels);
 
+_AMTK_EXTERN
 void			amtk_action_info_mark_as_used		(AmtkActionInfo *info);
 
+_AMTK_EXTERN
 gboolean		amtk_action_info_has_been_used		(const AmtkActionInfo *info);
 
 G_END_DECLS

@@ -86,66 +86,86 @@ typedef enum
 	AMTK_FACTORY_IGNORE_ACCELS_FOR_APP	= 1 << 6,
 } AmtkFactoryFlags;
 
+_AMTK_EXTERN
 GType			amtk_factory_get_type				(void);
 
+_AMTK_EXTERN
 AmtkFactory *		amtk_factory_new				(GtkApplication *application);
 
+_AMTK_EXTERN
 AmtkFactory *		amtk_factory_new_with_default_application	(void);
 
+_AMTK_EXTERN
 GtkApplication *	amtk_factory_get_application			(AmtkFactory *factory);
 
+_AMTK_EXTERN
 AmtkFactoryFlags	amtk_factory_get_default_flags			(AmtkFactory *factory);
 
+_AMTK_EXTERN
 void			amtk_factory_set_default_flags			(AmtkFactory      *factory,
 									 AmtkFactoryFlags  default_flags);
 
+_AMTK_EXTERN
 GtkWidget *		amtk_factory_create_menu_item			(AmtkFactory *factory,
 									 const gchar *action_name);
 
+_AMTK_EXTERN
 GtkWidget *		amtk_factory_create_menu_item_full		(AmtkFactory      *factory,
 									 const gchar      *action_name,
 									 AmtkFactoryFlags  flags);
 
+_AMTK_EXTERN
 GtkWidget *		amtk_factory_create_check_menu_item		(AmtkFactory *factory,
 									 const gchar *action_name);
 
+_AMTK_EXTERN
 GtkWidget *		amtk_factory_create_check_menu_item_full	(AmtkFactory      *factory,
 									 const gchar      *action_name,
 									 AmtkFactoryFlags  flags);
 
+_AMTK_EXTERN
 GtkWidget *		amtk_factory_create_simple_menu			(AmtkFactory               *factory,
 									 const AmtkActionInfoEntry *entries,
 									 gint                       n_entries);
 
+_AMTK_EXTERN
 GtkWidget *		amtk_factory_create_simple_menu_full		(AmtkFactory               *factory,
 									 const AmtkActionInfoEntry *entries,
 									 gint                       n_entries,
 									 AmtkFactoryFlags           flags);
 
+_AMTK_EXTERN
 GMenuItem *		amtk_factory_create_gmenu_item			(AmtkFactory *factory,
 									 const gchar *action_name);
 
+_AMTK_EXTERN
 GMenuItem *		amtk_factory_create_gmenu_item_full		(AmtkFactory      *factory,
 									 const gchar      *action_name,
 									 AmtkFactoryFlags  flags);
 
+_AMTK_EXTERN
 GtkToolItem *		amtk_factory_create_tool_button			(AmtkFactory *factory,
 									 const gchar *action_name);
 
+_AMTK_EXTERN
 GtkToolItem *		amtk_factory_create_tool_button_full		(AmtkFactory      *factory,
 									 const gchar      *action_name,
 									 AmtkFactoryFlags  flags);
 
+_AMTK_EXTERN
 GtkMenuToolButton *	amtk_factory_create_menu_tool_button		(AmtkFactory *factory,
 									 const gchar *action_name);
 
+_AMTK_EXTERN
 GtkMenuToolButton *	amtk_factory_create_menu_tool_button_full	(AmtkFactory      *factory,
 									 const gchar      *action_name,
 									 AmtkFactoryFlags  flags);
 
+_AMTK_EXTERN
 GtkWidget *		amtk_factory_create_shortcut			(AmtkFactory *factory,
 									 const gchar *action_name);
 
+_AMTK_EXTERN
 GtkWidget *		amtk_factory_create_shortcut_full		(AmtkFactory      *factory,
 									 const gchar      *action_name,
 									 AmtkFactoryFlags  flags);

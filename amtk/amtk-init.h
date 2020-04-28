@@ -25,10 +25,13 @@
 #endif
 
 #include <glib.h>
+#include <amtk/amtk-types.h>
 
 G_BEGIN_DECLS
 
+_AMTK_EXTERN
 void	amtk_init		(void);
+_AMTK_EXTERN
 void	amtk_finalize		(void);
 
 G_END_DECLS

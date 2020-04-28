@@ -53,11 +53,14 @@ struct _AmtkActionInfoCentralStoreClass
 	gpointer padding[12];
 };
 
+_AMTK_EXTERN
 GType		amtk_action_info_central_store_get_type		(void) G_GNUC_CONST;
 
+_AMTK_EXTERN
 AmtkActionInfoCentralStore *
 		amtk_action_info_central_store_get_singleton	(void);
 
+_AMTK_EXTERN
 AmtkActionInfo *amtk_action_info_central_store_lookup		(AmtkActionInfoCentralStore *central_store,
 								 const gchar                *action_name);
 

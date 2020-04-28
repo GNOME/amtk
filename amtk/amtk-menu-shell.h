@@ -61,10 +61,13 @@ struct _AmtkMenuShellClass
 	gpointer padding[12];
 };
 
+_AMTK_EXTERN
 GType		amtk_menu_shell_get_type		(void) G_GNUC_CONST;
 
+_AMTK_EXTERN
 AmtkMenuShell *	amtk_menu_shell_get_from_gtk_menu_shell	(GtkMenuShell *gtk_menu_shell);
 
+_AMTK_EXTERN
 GtkMenuShell *	amtk_menu_shell_get_menu_shell		(AmtkMenuShell *amtk_menu_shell);
 
 G_END_DECLS

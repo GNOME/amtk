@@ -25,13 +25,17 @@
 #endif
 
 #include <gtk/gtk.h>
+#include <amtk/amtk-types.h>
 
 G_BEGIN_DECLS
 
+_AMTK_EXTERN
 GtkShortcutsWindow *	amtk_shortcuts_window_new	(GtkWindow *parent);
 
+_AMTK_EXTERN
 GtkContainer *		amtk_shortcuts_section_new	(const gchar *title);
 
+_AMTK_EXTERN
 GtkContainer *		amtk_shortcuts_group_new	(const gchar *title);
 
 G_END_DECLS
