@@ -41,7 +41,13 @@ amtk_init (void)
 	{
 		gchar *locale_dir;
 
+#ifdef G_OS_WIN32
+		gchar *basedir = g_win32_get_package_installation_directory_of_module (NULL);
+		locale_dir = g_build_filename (basedir, "share", "locale", NULL);
+		g_free (basedir);
+#else
 		locale_dir = g_build_filename (DATADIR, "locale", NULL);
+#endif
 		bindtextdomain (GETTEXT_PACKAGE, locale_dir);
 		g_free (locale_dir);
 
