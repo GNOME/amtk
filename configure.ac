@@ -134,6 +134,9 @@ AC_CONFIG_FILES([
 	po/Makefile.in
 	tests/Makefile
 	testsuite/Makefile
+	win32/config.h.win32
+	win32/config-msvc.mak
+	win32/Makefile
 ])
 
 AC_OUTPUT

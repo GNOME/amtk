@@ -1,0 +1,97 @@
+# NMake Makefile portion for enabling features for Windows builds
+
+# Please do not change anything beneath this line unless maintaining the NMake Makefiles
+OUTDIR = vs$(PDBVER)\$(CFG)\$(PLAT)
+AMTK_VER = @AMTK_API_VERSION@
+AMTK_API_VER = $(AMTK_VER)
+CHECK_GIR_PACKAGE = Gtk-3.0
+AMTK_PKG_VERSION = @PACKAGE_VERSION@
+
+# Make bin, include and library directories of configurable
+!ifndef BINDIR
+BINDIR=$(PREFIX)\bin
+!endif
+
+!ifndef LIBDIR
+LIBDIR=$(PREFIX)\lib
+!endif
+
+!ifndef INCLUDEDIR
+INCLUDEDIR=$(PREFIX)\include
+!endif
+
+# Make import lib of gettext-runtime configurable
+!ifndef LIBINTL_LIB
+LIBINTL_LIB = intl.lib
+!endif
+
+# Make glib-mkenums script configurable
+!ifndef GLIB_MKENUMS
+GLIB_MKENUMS=$(PREFIX)\bin\glib-mkenums
+!endif
+
+LDFLAGS = $(LDFLAGS) /libpath:$(LIBDIR)
+
+# These are the base minimum libraries required for building amtk.
+
+# Visual Studio 2015 and later supports the /utf-8 compiler flag
+# that prevents C4819 warnings/errors on non-Western locales
+!if $(PDBVER) > 12
+EXTRA_BASE_CFLAGS = /utf-8
+!else
+EXTRA_BASE_CFLAGS =
+!endif
+
+BASE_CFLAGS =				\
+	$(CFLAGS_ADD)			\
+	/DHAVE_CONFIG_H			\
+	/FImsvc_recommended_pragmas.h	\
+	$(EXTRA_BASE_CFLAGS)
+
+BASE_DEP_INCLUDES =			\
+	/I$(INCLUDEDIR)\gtk-3.0	\
+	/I$(INCLUDEDIR)\gdk-pixbuf-2.0	\
+	/I$(INCLUDEDIR)\pango-1.0	\
+	/I$(INCLUDEDIR)\atk-1.0	\
+	/I$(INCLUDEDIR)\glib-2.0	\
+	/I$(LIBDIR)\glib-2.0\include	\
+	/I$(INCLUDEDIR)
+
+BASE_DEP_LIBS =			\
+	gtk-3.0.lib	\
+	gio-2.0.lib		\
+	gobject-2.0.lib		\
+	glib-2.0.lib		\
+	cairo.lib		\
+	$(LIBINTL_LIB)
+
+AMTK_LOG_DOMAIN = /DG_LOG_DOMAIN=\"Amtk\"
+
+AMTK_CFLAGS =				\
+	$(BASE_CFLAGS)				\
+	/DAMTK_COMPILATION			\
+	/D_AMTK_EXTERN=__declspec(dllexport)
+
+AMTK_INCLUDES =			\
+	/Ivs$(PDBVER)\$(CFG)\$(PLAT)\amtk	\
+	/Ivs$(PDBVER)\$(CFG)\$(PLAT)		\
+	/I..\amtk	\
+	/I..	\
+	$(BASE_DEP_INCLUDES)
+
+!ifdef LIBTOOL_DLL_NAME
+AMTK_DLL = vs$(PDBVER)\$(CFG)\$(PLAT)\libamtk-$(AMTK_VER)-0.dll
+!else
+AMTK_DLL = vs$(PDBVER)\$(CFG)\$(PLAT)\amtk-$(AMTK_VER)-vs$(PDBVER).dll
+!endif
+
+!include create-lists-msvc.mak
+
+# Build Introspection if requested
+EXTRA_TARGETS = $(amtk_testsuite_progs) $(amtk_test_progs)
+
+!ifdef INTROSPECTION
+EXTRA_TARGETS =				\
+	$(OUTDIR)\Amtk-$(AMTK_VER).typelib	\
+	$(EXTRA_TARGETS)
+!endif

@@ -1,4 +1,4 @@
-SUBDIRS = po amtk tests testsuite docs
+SUBDIRS = po amtk tests testsuite docs win32
 
 include $(top_srcdir)/aminclude_static.am
 clean-local: code-coverage-clean
