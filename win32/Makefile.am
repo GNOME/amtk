@@ -21,3 +21,5 @@ MAINTAINERCLEANFILES =	\
 	config.h.win32	\
 	config-msvc.mak	\
 	Makefile
+
+-include $(top_srcdir)/git.mk
