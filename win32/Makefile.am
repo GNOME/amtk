@@ -16,3 +16,8 @@ EXTRA_DIST = \
 	pc_base.py		\
 	README.txt		\
 	replace.py
+
+MAINTAINERCLEANFILES =	\
+	config.h.win32	\
+	config-msvc.mak	\
+	Makefile
