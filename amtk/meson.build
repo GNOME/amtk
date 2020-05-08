@@ -30,7 +30,12 @@ amtk_sources = files(
   'amtk-utils.c',
 )
 
-amtk_enums = gnome.mkenums_simple('amtk-enum-types', sources : amtk_public_headers)
+amtk_enums = gnome.mkenums_simple(
+  'amtk-enum-types',
+  decorator: '_AMTK_EXTERN',
+  header_prefix: '#include <amtk/amtk-types.h>',
+  sources : amtk_public_headers
+)
 
 amtk_conf = configuration_data()
 amtk_conf.set_quoted('GETTEXT_PACKAGE', 'amtk-5')
