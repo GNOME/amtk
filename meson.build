@@ -13,3 +13,4 @@ GNOME = import('gnome')
 pkg = import('pkgconfig')
 
 subdir('amtk')
+subdir('tests')

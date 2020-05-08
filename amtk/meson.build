@@ -63,8 +63,10 @@ libamtk = library('amtk', amtk_sources, amtk_enums,
   include_directories : amtk_incdir,
 )
 
-amtk_dep = declare_dependency(link_with : libamtk,
-  include_directories : amtk_incdir)
+AMTK_DEP = declare_dependency(link_with : libamtk,
+  include_directories : amtk_incdir,
+  dependencies: deps,
+)
 
 if get_option('introspection')
   GNOME.generate_gir(
