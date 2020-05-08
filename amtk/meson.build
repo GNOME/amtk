@@ -42,6 +42,10 @@ cargs = [
   '-DAMTK_COMPILATION',
 ]
 
+if meson.get_compiler('c').get_argument_syntax() == 'msvc'
+  cargs += '-D_AMTK_EXTERN=__declspec(dllexport)extern'
+endif
+
 deps = [
   dependency('gtk+-3.0', version : '>=3.22'),
 ]
