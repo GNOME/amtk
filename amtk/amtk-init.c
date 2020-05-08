@@ -1,7 +1,7 @@
 /*
  * This file is part of Amtk - Actions, Menus and Toolbars Kit
  *
- * Copyright 2017 - Sébastien Wilmet <swilmet@gnome.org>
+ * Copyright 2017-2020 - Sébastien Wilmet <swilmet@gnome.org>
  *
  * Amtk is free software; you can redistribute it and/or modify it under
  * the terms of the GNU Lesser General Public License as published by the
@@ -22,6 +22,23 @@
 #include <glib/gi18n-lib.h>
 #include "amtk-action-info-central-store.h"
 
+static gchar *
+get_locale_directory (void)
+{
+#ifdef G_OS_WIN32
+	gchar *base_dir;
+	gchar *locale_dir;
+
+	base_dir = g_win32_get_package_installation_directory_of_module (NULL);
+	locale_dir = g_build_filename (base_dir, "share", "locale", NULL);
+	g_free (base_dir);
+
+	return locale_dir;
+#else
+	return g_build_filename (DATADIR, "locale", NULL);
+#endif
+}
+
 /**
  * amtk_init:
  *
@@ -41,13 +58,7 @@ amtk_init (void)
 	{
 		gchar *locale_dir;
 
-#ifdef G_OS_WIN32
-		gchar *basedir = g_win32_get_package_installation_directory_of_module (NULL);
-		locale_dir = g_build_filename (basedir, "share", "locale", NULL);
-		g_free (basedir);
-#else
-		locale_dir = g_build_filename (DATADIR, "locale", NULL);
-#endif
+		locale_dir = get_locale_directory ();
 		bindtextdomain (GETTEXT_PACKAGE, locale_dir);
 		g_free (locale_dir);
 

@@ -31,6 +31,7 @@ G_BEGIN_DECLS
 
 _AMTK_EXTERN
 void	amtk_init		(void);
+
 _AMTK_EXTERN
 void	amtk_finalize		(void);
 
