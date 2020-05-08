@@ -14,3 +14,4 @@ pkg = import('pkgconfig')
 
 subdir('amtk')
 subdir('tests')
+subdir('testsuite')
