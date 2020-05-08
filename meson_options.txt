@@ -1,0 +1,4 @@
+option('introspection',
+       description: 'Build the GObject introspection data for amtk',
+       type: 'boolean',
+       value: true)

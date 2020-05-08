@@ -30,7 +30,7 @@ amtk_sources = files(
   'amtk-utils.c',
 )
 
-amtk_enums = gnome.mkenums_simple(
+amtk_enums = GNOME.mkenums_simple(
   'amtk-enum-types',
   decorator: '_AMTK_EXTERN',
   header_prefix: '#include <amtk/amtk-types.h>',
@@ -65,5 +65,22 @@ libamtk = library('amtk', amtk_sources, amtk_enums,
 
 amtk_dep = declare_dependency(link_with : libamtk,
   include_directories : amtk_incdir)
+
+if get_option('introspection')
+  GNOME.generate_gir(
+    libamtk,
+    extra_args: cargs,
+    export_packages: 'amtk-@0@'.format(AMTK_API_VERSION),
+    header: 'amtk/amtk.h',
+    include_directories: amtk_incdir,
+    includes: ['Gtk-3.0'],
+    install: true,
+    namespace: 'Amtk',
+    nsversion: AMTK_API_VERSION,
+    sources: [amtk_sources, amtk_enums,],
+    # Support for deps being built as subprojects:
+    dependencies: deps,
+  )
+endif
 
 pkg.generate(libamtk)

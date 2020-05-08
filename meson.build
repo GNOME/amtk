@@ -7,7 +7,9 @@ project('amtk', 'c',
   ]
 )
 
-gnome = import('gnome')
+AMTK_API_VERSION = '5'
+
+GNOME = import('gnome')
 pkg = import('pkgconfig')
 
 subdir('amtk')
