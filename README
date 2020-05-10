@@ -17,7 +17,7 @@ The Amtk web page:
 Dependencies
 ------------
 
-- GLib >= 2.52
+- GLib >= 2.56
 - GTK >= 3.22
 
 Installation

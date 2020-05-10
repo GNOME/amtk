@@ -49,7 +49,7 @@ AMTK_API_VERSION=5
 AC_SUBST([AMTK_API_VERSION])
 
 # Dependencies
-glib_req=2.52
+glib_req=2.56
 gtk_req=3.22
 
 AC_CONFIG_SRCDIR([amtk/amtk.h])

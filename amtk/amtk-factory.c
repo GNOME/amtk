@@ -240,12 +240,7 @@ amtk_factory_set_property (GObject      *object,
 	{
 		case PROP_APPLICATION:
 			g_assert (factory->priv->app == NULL);
-			factory->priv->app = g_value_get_object (value);
-			if (factory->priv->app != NULL)
-			{
-				g_object_add_weak_pointer (G_OBJECT (factory->priv->app),
-							   (gpointer *) &factory->priv->app);
-			}
+			g_set_weak_pointer (&factory->priv->app, g_value_get_object (value));
 			break;
 
 		case PROP_DEFAULT_FLAGS:
@@ -263,12 +258,7 @@ amtk_factory_dispose (GObject *object)
 {
 	AmtkFactory *factory = AMTK_FACTORY (object);
 
-	if (factory->priv->app != NULL)
-	{
-		g_object_remove_weak_pointer (G_OBJECT (factory->priv->app),
-					      (gpointer *) &factory->priv->app);
-		factory->priv->app = NULL;
-	}
+	g_clear_weak_pointer (&factory->priv->app);
 
 	G_OBJECT_CLASS (amtk_factory_parent_class)->dispose (object);
 }
