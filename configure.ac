@@ -3,7 +3,7 @@ dnl Process this file with autoconf to produce a configure script.
 AC_PREREQ(2.64)
 
 # Package version of the form 'major.minor.micro'.
-m4_define(amtk_package_version, 5.1.0)
+m4_define(amtk_package_version, 5.1.1)
 
 AC_INIT([Amtk],
 	[amtk_package_version],

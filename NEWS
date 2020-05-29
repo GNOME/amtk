@@ -1,3 +1,11 @@
+News in 5.1.1, 2020-05-29
+-------------------------
+* Support detailed GAction names in factory functions.
+* Mark public API with _AMTK_EXTERN.
+* Microsoft Windows: better support.
+* Small maintenance stuff.
+* Translation updates.
+
 News in 5.0.2, 2020-01-25
 -------------------------
 * Small maintenance stuff.
