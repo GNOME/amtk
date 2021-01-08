@@ -3,3 +3,9 @@ option(
   type: 'boolean', value: false,
   description: 'Build API reference (requires gtk-doc)'
 )
+
+option('introspection',
+       type: 'feature',
+       value: 'auto',
+       yield: true,
+       description : 'Build introspection data (requires gobject-introspection)')
